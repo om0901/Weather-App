@@ -1,36 +1,81 @@
-body {
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-color: #f2f2f2;
+  }
+  
+  body.dark {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-color: #1e1e1e;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
   }
   
   .weather-container {
-    background: white;
+    background-color: var(--card-color);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   }
   
-  input {
+  input, button {
     padding: 10px;
-    width: 200px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+  }
+  
+  input {
+    width: calc(100% - 22px);
   }
   
   button {
-    padding: 10px;
-    margin-left: 10px;
-    background: #2196F3;
+    background-color: #2196F3;
     color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0b7dda;
+  }
+  
+  #darkModeToggle {
+    background: none;
+    color: var(--text-color);
+    font-size: 1.2em;
     border: none;
     cursor: pointer;
   }
   
-  #weatherResult {
-    margin-top: 20px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  @media (max-width: 480px) {
+    .weather-container {
+      width: 95%;
+      padding: 15px;
+    }
+    input, button {
+      width: 100%;
+      margin-top: 8px;
+    }
   }
   
